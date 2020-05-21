@@ -1,8 +1,8 @@
 package main
 
 import (
-	"io/ioutil"
 	"fmt"
+	"io/ioutil"
 	"strconv"
 )
 
@@ -13,11 +13,11 @@ func main() {
 	}
 	input := string(dat)
 	inputLength := len(input)
-	
+
 	sum := review(input, 1)
 	fmt.Println("part 1 =", sum)
 
-	sum = review(input, inputLength / 2)
+	sum = review(input, inputLength/2)
 	fmt.Println("part 2 =", sum)
 }
 
@@ -32,10 +32,10 @@ func parseInt(number string) int {
 func review(input string, offset int) (sum int) {
 	sum = 0
 	inputLength := len(input)
-	for index := 0;  index < inputLength; index++ {
+	for index := 0; index < inputLength; index++ {
 		current := input[index]
-		refrence := input[(index + offset) % inputLength ]
-		if (current == refrence) {
+		refrence := input[(index+offset)%inputLength]
+		if current == refrence {
 			sum += parseInt(string(current))
 		}
 	}
