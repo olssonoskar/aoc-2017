@@ -1,13 +1,17 @@
 package main
 
 func main() {
+	//part1()
+	Part2()
+}
+
+func part1() {
 	seeked := 312051
 	upper, lower, layer := getCircleRange(seeked)
 	println("Initial", upper, lower)
 	toMiddle := stepsFromMiddle(seeked, upper, lower)
 	println(toMiddle)
 	println((layer - 1) + toMiddle)
-
 }
 
 func getCircleRange(value int) (lower, upper, index int) {

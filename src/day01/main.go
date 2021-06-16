@@ -12,21 +12,17 @@ func main() {
 		panic(err)
 	}
 	input := string(dat)
-	inputLength := len(input)
 
-	sum := review(input, 1)
-	fmt.Println("part 1 =", sum)
-
-	sum = review(input, inputLength/2)
-	fmt.Println("part 2 =", sum)
+	fmt.Println("part 1 =", Part1(input))
+	fmt.Println("part 2 =", Part2(input))
 }
 
-func parseInt(number string) int {
-	val, err := strconv.Atoi(number)
-	if err != nil {
-		panic(err)
-	}
-	return val
+func Part1(input string) int {
+	return review(input, 1)
+}
+
+func Part2(input string) int {
+	return review(input, len(input)/2)
 }
 
 func review(input string, offset int) (sum int) {
@@ -36,7 +32,8 @@ func review(input string, offset int) (sum int) {
 		current := input[index]
 		refrence := input[(index+offset)%inputLength]
 		if current == refrence {
-			sum += parseInt(string(current))
+			num, _ := strconv.Atoi(string(current))
+			sum += num
 		}
 	}
 	return

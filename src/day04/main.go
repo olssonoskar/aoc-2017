@@ -8,11 +8,11 @@ import (
 
 func main() {
 	input := util.GetInput("day04")
-	println(part1(input))
-	println(part2(input))
+	println(Part1(input))
+	println(Part2(input))
 }
 
-func part1(input string) int {
+func Part1(input string) int {
 	validPhrase := 0
 	phrases := strings.Split(input, "\n")
 	for _, phrase := range phrases {
@@ -24,7 +24,7 @@ func part1(input string) int {
 	return validPhrase
 }
 
-func part2(input string) int {
+func Part2(input string) int {
 	validPhrase := 0
 	phrases := strings.Split(input, "\n")
 	for _, phrase := range phrases {
