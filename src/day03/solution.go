@@ -1,7 +1,7 @@
-package main
+package day03
 
-func main() {
-	//part1()
+func Solve() {
+	part1()
 	Part2()
 }
 

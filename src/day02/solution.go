@@ -1,20 +1,20 @@
-package main
+package day02
 
 import (
-	"io/ioutil"
-	"strconv"
 	"fmt"
-	"strings"
 	"math"
+	"os"
+	"strconv"
+	"strings"
 )
 
-func main() {
-	dat, err := ioutil.ReadFile("day2.txt")
+func Solve() {
+	dat, err := os.ReadFile("day02/day2.txt")
 	if err != nil {
 		panic(err)
 	}
 
-	rows := strings.Split(string(dat), "\r\n")
+	rows := strings.Split(strings.ReplaceAll(string(dat), "\r\n", "\n"), "\n")
 	var elemRows [][]string = make([][]string, len(rows))
 
 	sum := 0
@@ -24,7 +24,7 @@ func main() {
 		sum += (max - min)
 	}
 
-	fmt.Println("part 1: ", sum)
+	fmt.Println("part 1 = ", sum)
 
 	sum = 0
 	for _, row := range elemRows {
@@ -32,7 +32,7 @@ func main() {
 		sum += quotient
 	}
 
-	fmt.Println("part 2: ", sum)
+	fmt.Println("part 2 = ", sum)
 }
 
 func findMinMax(row []string) (min, max int) {
@@ -56,7 +56,7 @@ func findMinMax(row []string) (min, max int) {
 func findQuotient(row []string) int {
 	for i, outer := range row {
 		for j, inner := range row {
-			if (i != j) {
+			if i != j {
 				found, quotient := isDivisible(outer, inner)
 				if found {
 					return quotient
@@ -78,14 +78,14 @@ func isDivisible(e1, e2 string) (bool, int) {
 		panic(err)
 	}
 	divident, divisor := order(num, num2)
-	if (divident % divisor == 0) {
+	if divident%divisor == 0 {
 		return true, divident / divisor
 	}
-    return false, 0
+	return false, 0
 }
 
 func order(e1, e2 int) (high, low int) {
-	if (e1 > e2) {
+	if e1 > e2 {
 		return e1, e2
 	}
 	return e2, e1

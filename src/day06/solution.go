@@ -1,13 +1,13 @@
-package main
+package day06
 
 import (
+	"aoc2017/src/util"
 	"fmt"
 	"strconv"
 	"strings"
-	"util"
 )
 
-func main() {
+func Solve() {
 	input := strings.Split(util.GetInput("day06"), " ")
 	banks := make([]int, len(input))
 	for idx, val := range input {

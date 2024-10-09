@@ -2,7 +2,7 @@ package util
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"path/filepath"
 	"strings"
 )
@@ -13,7 +13,7 @@ func GetInput(folder string) string {
 	if err != nil {
 		fmt.Print(err)
 	}
-	input, err := ioutil.ReadFile(filepath)
+	input, err := os.ReadFile(filepath)
 	if err != nil {
 		fmt.Print(err)
 	}

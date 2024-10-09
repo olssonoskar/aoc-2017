@@ -1,11 +1,11 @@
-package main
+package day05
 
 import (
+	"aoc2017/src/util"
 	"strconv"
-	"util"
 )
 
-func main() {
+func Solve() {
 	input := util.GetLines("day05", "\r\n")
 	println(Part1(input))
 	println(Part2(input))

@@ -1,4 +1,4 @@
-package main
+package day03
 
 type Direction int
 
@@ -43,7 +43,7 @@ func (b Battery) sumNeighbors(pos *Position) int {
 	return sum
 }
 
-//Attemps turn, if not free continue to next
+// Attemps turn, if not free continue to next
 func turnIfPossible(battery [][]int, pos *Position) {
 	switch pos.dir {
 	case D:

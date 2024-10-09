@@ -1,15 +1,15 @@
-package main
+package day04
 
 import (
+	"aoc2017/src/util"
 	"sort"
 	"strings"
-	"util"
 )
 
-func main() {
+func Solve() {
 	input := util.GetInput("day04")
-	println(Part1(input))
-	println(Part2(input))
+	println("part1 = ", Part1(input))
+	println("part2 = ", Part2(input))
 }
 
 func Part1(input string) int {

@@ -1,13 +1,13 @@
-package main
+package day01
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"strconv"
 )
 
-func main() {
-	dat, err := ioutil.ReadFile("day1.txt")
+func Solve() {
+	dat, err := os.ReadFile("day01/day1.txt")
 	if err != nil {
 		panic(err)
 	}
