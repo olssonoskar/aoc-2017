@@ -22,5 +22,6 @@ func GetInput(folder string) string {
 }
 
 func GetLines(folder, delimiter string) []string {
-	return strings.Split(GetInput(folder), delimiter)
+	input := strings.ReplaceAll(GetInput(folder), "\r\n", "\n")
+	return strings.Split(input, delimiter)
 }
