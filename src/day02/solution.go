@@ -75,7 +75,7 @@ func isDivisible(e1, e2 string) (bool, int) {
 	}
 	num2, err2 := strconv.Atoi(e2)
 	if err2 != nil {
-		panic(err)
+		panic(err2)
 	}
 	divident, divisor := order(num, num2)
 	if divident%divisor == 0 {

@@ -16,6 +16,7 @@ func GetInput(folder string) string {
 	input, err := os.ReadFile(filepath)
 	if err != nil {
 		fmt.Print(err)
+		return ""
 	}
 	return string(input)
 }

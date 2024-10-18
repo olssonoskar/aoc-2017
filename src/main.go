@@ -7,6 +7,8 @@ import (
 	"aoc2017/src/day04"
 	"aoc2017/src/day05"
 	"aoc2017/src/day06"
+	"aoc2017/src/day08"
+	"aoc2017/src/day09"
 	"fmt"
 )
 
@@ -23,4 +25,8 @@ func main() {
 	day05.Solve()
 	fmt.Println("--------- Day 6 ---------")
 	day06.Solve()
+	fmt.Println("--------- Day 8 ---------")
+	day08.Solve()
+	fmt.Println("--------- Day 9 ---------")
+	day09.Solve()
 }
